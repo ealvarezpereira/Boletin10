@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class Juego {
 
     int cond; //Esta variable es para la condicion de las pistas del if
-    int var;
+    //int var;
 
     public void cuerpoJuego() {
 
@@ -22,13 +22,13 @@ public class Juego {
 
         //System.out.println("Solucion: "+numr); -> Muestra la solución al número random (Modo prueba, no seas tramposo)
         String c = JOptionPane.showInputDialog("Elija el número de intentos");
-        int vara = Integer.parseInt(c);
+        int intentos = Integer.parseInt(c);
 
         JOptionPane.showMessageDialog(null, "Comencemos!");
 
-        while (vara != 0) {
+        while (intentos != 0) {
 
-            String d = JOptionPane.showInputDialog("Número de intentos: " + vara + "\nIntroduzca un número:");
+            String d = JOptionPane.showInputDialog("Número de intentos: " + intentos + "\nIntroduzca un número:");
             int numero2 = Integer.parseInt(d);
 
             //Aquí calculo la distancia entre el numero random y el introducido.
@@ -55,14 +55,14 @@ public class Juego {
 
             if (numr != numero2) {
 
-                vara--;
+                intentos--;
             }
-            if (vara == 0) {
+            if (intentos == 0) {
                 JOptionPane.showMessageDialog(null, "Has perdido!" + "\nEl número era " + numr);
             }
 
             if (numr == numero2) {
-                vara = 0;
+                intentos = 0;
             }
         }
     }
