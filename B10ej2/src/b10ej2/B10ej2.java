@@ -16,7 +16,7 @@ public class B10ej2 {
      */
     public static void main(String[] args) {
         Menu inicio = new Menu();
-        inicio.home();   
+        inicio.home();
     }
-    
+
 }
