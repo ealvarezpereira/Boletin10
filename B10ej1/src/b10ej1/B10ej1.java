@@ -18,5 +18,5 @@ public class B10ej1 {
         Menu inicio = new Menu();
         inicio.menuu();
     }
-    
+
 }
