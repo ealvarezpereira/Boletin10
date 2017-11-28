@@ -17,25 +17,23 @@ public class Menu {
     int var;
 
     public void home() {
+        //El showConfirmDialog sirve para que te aparezcan los botones
+        var = JOptionPane.showConfirmDialog(null, "¿Jugamos?");
 
-        String a = JOptionPane.showInputDialog("**** MENU ****\n1.- Empezar\n0.-Salir");
-        var = Integer.parseInt(a);
-
-        while (var > 0) {
+        while (var == JOptionPane.YES_OPTION) {
             switch (var) {
-
-                case 1:
+                                //Si pulsas el boton sí que llame al juego
+                case JOptionPane.YES_OPTION:
                     jgo.cuerpoJuego();
-                    break;
-                case 0:
+                    break;      //Si pulsas el boton no que salga del juego
+                case JOptionPane.NO_OPTION:
                     JOptionPane.showMessageDialog(null, "Saliendo...");
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null, "Número inválido");
+                    JOptionPane.showMessageDialog(null, "Opción inválida");
                     break;
             }
-            String b = JOptionPane.showInputDialog("**** MENU ****\n1.- Empezar\n0.-Salir");
-            var = Integer.parseInt(b);
+            var = JOptionPane.showConfirmDialog(null, "¿Jugamos?");
         }
     }
 }
