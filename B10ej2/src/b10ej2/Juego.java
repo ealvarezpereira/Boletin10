@@ -14,22 +14,28 @@ import javax.swing.JOptionPane;
 public class Juego {
 
     int cond; //Esta variable es para la condicion de las pistas del if
-    //int var;
+    String c; //Esta variable es para los showInputDialog
 
     public void cuerpoJuego() {
 
         int numr = (int) (Math.random() * 50) + 1;
 
-        //System.out.println("Solucion: "+numr); -> Muestra la solución al número random (Modo prueba, no seas tramposo)
-        String c = JOptionPane.showInputDialog("Elija el número de intentos");
+        System.out.println("Solución: "+numr); //-> Muestra la solución al número random (Modo prueba, no seas tramposo)
+        c = JOptionPane.showInputDialog("Elija el número de intentos (Máximo 10)");
         int intentos = Integer.parseInt(c);
-
+        
+        while (intentos == 0 || intentos > 10){
+            JOptionPane.showMessageDialog(null, "Número inválido");
+            c = JOptionPane.showInputDialog("Elija el número de intentos (Máximo 10)");
+            intentos = Integer.parseInt(c);
+        }
+        
         JOptionPane.showMessageDialog(null, "Comencemos!");
 
         while (intentos != 0) {
 
-            String d = JOptionPane.showInputDialog("Número de intentos: " + intentos + "\nIntroduzca un número:");
-            int numero2 = Integer.parseInt(d);
+            c = JOptionPane.showInputDialog("Número de intentos: " + intentos + "\nIntroduzca un número:");
+            int numero2 = Integer.parseInt(c);
 
             //Aquí calculo la distancia entre el numero random y el introducido.
             //Esto está hecho así para que la distancia nunca de un número negativo.
